@@ -11,6 +11,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import MapItem from '../../../components/MapItem';
 
 // screens
+import MapScreen from './MapScreen';
 import TestScreen from './TestScreen';
 
 const DATA = [
@@ -60,34 +61,36 @@ const DATA = [
   },
 ];
 
-// const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 
-// // Component
-// const StackNavigator = () => {
-//   return (
-//     <Stack.Navigator
-//     initialRouteName='TestScreen'>
-//       <Stack.Screen
-//         name='TestScreen'
-//         component={TestScreen}
-//         options={{ headerShown: false }}/>
-//       {/* <Stack.Screen
-//         name='HomeScreen'
-//         component={HomeScreen}
-//         options={{ headerShown: false }} /> */}
-//     </Stack.Navigator>
-//   )
-// }
-
-const MapScreen = () => {
+// Component
+const StackNavigator = () => {
   return (
-    <SafeAreaView style={styles.container}>
-    <FlatList
-      data={DATA}
-      renderItem={({item}) => <MapItem title={item.title} />}
-      keyExtractor={item => item.id}
-    />
-  </SafeAreaView>
+    <Stack.Navigator
+    initialRouteName='MapScreen'>
+      <Stack.Screen
+        name='MapScreen'
+        component={MapScreen}
+        options={{ headerShown: false }}/>
+      <Stack.Screen
+        name='TestScreen'
+        component={TestScreen}
+        options={{ headerShown: false }}/>
+    </Stack.Navigator>
+  )
+}
+
+const MapStackScreen = () => {
+  return (
+    <StackNavigator />   
+
+  //   <SafeAreaView style={styles.container}>
+  //   <FlatList
+  //     data={DATA}
+  //     renderItem={({item}) => <MapItem title={item.title} />}
+  //     keyExtractor={item => item.id}
+  //   />
+  // </SafeAreaView>
   )
 }
 
@@ -107,6 +110,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MapScreen
+export default MapStackScreen
 
 

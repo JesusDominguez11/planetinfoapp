@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Header, getHeaderTitle } from '@react-navigation/elements';
 
 // screens
-import MapScreen from './MapScreen';
+import MapStackScreen from './MapStackScreen';
 
 const HomeScreenII = () => {
   return (
@@ -45,10 +45,10 @@ const Tab = createBottomTabNavigator();
 function HomeScreen() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Map Screen" component={MapScreen} />
-      <Tab.Screen name="Home II" component={HomeScreenII} />
-      <Tab.Screen name="Home III" component={HomeScreenIII} />
-      <Tab.Screen name="Home IV" component={HomeScreenIV} />
+      <Tab.Screen name="Map Screen" component={MapStackScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Home II" component={HomeScreenII} options={{ headerShown: false }} />
+      <Tab.Screen name="Home III" component={HomeScreenIII} options={{ headerShown: false }} />
+      <Tab.Screen name="Home IV" component={HomeScreenIV} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
 }
@@ -59,7 +59,6 @@ function MyDrawer() {
   return (
     <Drawer.Navigator>
       <Drawer.Screen name="Home" component={HomeScreen} />
-      {/* <Drawer.Screen name="Article" component={Article} /> */}
     </Drawer.Navigator>
   );
 }

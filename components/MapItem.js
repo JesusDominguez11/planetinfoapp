@@ -1,12 +1,24 @@
 import React from 'react'
 import { View, Text, StyleSheet, StatusBar } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
+// navigation
+import { useNavigation } from '@react-navigation/native';
+
+// screen
+import TestScreen from '../src/navigation/screens/TestScreen';
   
-  const MapItem = ({title}) => (
+  const MapItem = ({title}) => {
+    const navigation = useNavigation();
+
+    return(
     <View style={styles.item}>
-      <TouchableOpacity><Text style={styles.title}>{title}</Text></TouchableOpacity>
+      <TouchableOpacity  onPress={() => navigation.navigate('TestScreen')} // Navega a la pantalla de prueba
+      >
+      <Text style={styles.title}>{title}</Text></TouchableOpacity>
     </View>
   );
+}
 
 const styles = StyleSheet.create({
   container: {
