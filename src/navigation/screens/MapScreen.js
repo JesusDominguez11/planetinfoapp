@@ -3,15 +3,11 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView,
   StatusBar, FlatList } from 'react-native';
 
-//navigation
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
 // components
 import MapItem from '../../../components/MapItem';
 
-// screens
-import TestScreen from './TestScreen';
+//styles
+import { MapStyles } from '../../styles/styles';
 
 const DATA = [
   {
@@ -60,26 +56,9 @@ const DATA = [
   },
 ];
 
-// const Stack = createStackNavigator();
-
-// // Component
-// const StackNavigator = () => {
-//   return (
-//     <Stack.Navigator
-//     initialRouteName='TestScreen'>
-//       <Stack.Screen
-//         name='TestScreen'
-//         component={TestScreen}
-//         options={{ headerShown: false }}/>
-//       {/* <Stack.Screen
-//         name='HomeScreen'
-//         component={HomeScreen}
-//         options={{ headerShown: false }} /> */}
-//     </Stack.Navigator>
-//   )
-// }
-
 const MapScreen = () => {
+  styles = MapStyles
+
   return (
     <SafeAreaView style={styles.container}>
     <FlatList
@@ -90,22 +69,6 @@ const MapScreen = () => {
   </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
-  },
-});
 
 export default MapScreen
 
