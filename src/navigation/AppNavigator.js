@@ -3,6 +3,7 @@ import React from 'react'
 
 //screens
 import MapScreen from './screens/MapScreen';
+import PlanetScreen from './screens/PlanetScreen';
 import TestScreen from './screens/TestScreen';
 
 // navigation
@@ -25,7 +26,26 @@ const Tab = createBottomTabNavigator();
 
 function AppTabNavigator() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+    screenOptions={{
+      tabBarStyle: {
+          backgroundColor: '#000000', // Color de fondo negro
+          borderTopWidth: 0, // Quita el borde superior
+      },
+      tabBarActiveTintColor: '#FFFFFF', // Color del texto y iconos activos
+      tabBarInactiveTintColor: '#FFFFFF', // Color del texto y iconos inactivos
+      tabBarLabelStyle: {
+          fontSize: 14, // Tamaño de fuente de las etiquetas
+      },
+      tabBarIconStyle: {
+          shadowColor: '#fff', // Color de sombra blanca
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.3,
+          shadowRadius: 4,
+          elevation: 5, // Elevación para Android
+      },
+  }}
+    >
       <Tab.Screen name="Map Screen" component={MapStackNavigator} options={{ headerShown: false }}> 
         {/* <MapStackNavigator></MapStackNavigator> */}
       </Tab.Screen>
@@ -48,8 +68,8 @@ const MapStackNavigator = () => {
         component={MapScreen}
         options={{ headerShown: false }}/>
       <Stack.Screen
-        name='TestScreen'
-        component={TestScreen}
+        name='PlanetScreen'
+        component={PlanetScreen}
         options={{ headerShown: false }}/>
     </Stack.Navigator>
   )
