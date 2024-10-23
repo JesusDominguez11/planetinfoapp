@@ -3,8 +3,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import LoginScreen from './src/navigation/screens/LoginScreen'
-import SigninScreen from './src/navigation/screens/SigninScreen'
 import AuthenticationScreen from './src/navigation/screens/AuthenticationScreen';
 import HomeScreen from './src/navigation/screens/HomeScreen';
 

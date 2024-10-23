@@ -1,20 +1,59 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
-// Only import react-native-gesture-handler on native platforms
+
+// navigation
 import 'react-native-gesture-handler';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Header, getHeaderTitle } from '@react-navigation/elements';
 
-const Drawer = createDrawerNavigator();
+// screens
+import MapScreen from './MapScreen';
 
-const HomeScreen = () => {
+const HomeScreenII = () => {
   return (
     <View
     style={styles.container}
     >
-      <Text>HomeScreen</Text>
+      <Text>HomeScreen 2</Text>
     </View>
   )
 }
+
+const HomeScreenIII = () => {
+  return (
+    <View
+    style={styles.container}
+    >
+      <Text>HomeScreen 3</Text>
+    </View>
+  )
+}
+
+const HomeScreenIV = () => {
+  return (
+    <View
+    style={styles.container}
+    >
+      <Text>HomeScreen 4</Text>
+    </View>
+  )
+}
+
+const Tab = createBottomTabNavigator();
+
+function HomeScreen() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Map Screen" component={MapScreen} />
+      <Tab.Screen name="Home II" component={HomeScreenII} />
+      <Tab.Screen name="Home III" component={HomeScreenIII} />
+      <Tab.Screen name="Home IV" component={HomeScreenIV} />
+    </Tab.Navigator>
+  );
+}
+
+const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
   return (
