@@ -3,7 +3,7 @@ const planetData = [
     {
       id: '1',
       title: 'Mercurio',
-      image: require('../img/001p.png'),
+      image: require('../img/001p_03f150b8-9184-11ef-ae2a-4651a841d960_wm-transformed.png'),
       description: ' Mercurio es el planeta más cercano al Sol y el más pequeño del sistema solar. Su proximidad al Sol y su falta de atmósfera significativa lo convierten en un mundo de extremos térmicos, donde las temperaturas pueden alcanzar hasta 430 °C durante el día y caer a -180 °C por la noche. La superficie de Mercurio está marcada por cráteres, similar a la Luna, y es un lugar de gran interés para la investigación científica. La duración de su día es mayor que su año, ya que tarda 59 días terrestres en rotar sobre su eje, mientras que completa una órbita alrededor del Sol en solo 88 días. Este planeta también presenta un campo magnético, lo que es sorprendente para un cuerpo tan pequeño.',
       distanceFromSun: '57.91 million km',
       diameter: '4,880 km',
@@ -33,7 +33,7 @@ const planetData = [
     {
       id: '3',
       title: 'Tierra',
-      image: '',
+      image: require('../img/003p_d481479a-9217-11ef-863a-829606c855ef_wm.png'),
       description: 'La Tierra es el único planeta conocido que alberga vida, y su superficie es aproximadamente 71% agua. Esta combinación de agua, aire y tierra ha creado un ambiente diverso y dinámico. La atmósfera terrestre está compuesta principalmente de oxígeno y nitrógeno, lo que es esencial para la vida tal como la conocemos. La Tierra tiene un período orbital de 365.25 días, lo que define un año, y una rotación que dura aproximadamente 24 horas, creando el ciclo de día y noche. Además, su campo magnético protege a la vida de las radiaciones cósmicas y solares. La variedad de climas, paisajes y ecosistemas en la Tierra la convierte en un lugar único en el sistema solar.',
       distanceFromSun: '149.6 million km',
       diameter: '12,742 km',
@@ -48,7 +48,7 @@ const planetData = [
     {
       id: '4',
       title: 'Marte',
-      image: '',
+      image: require('../img/004p_6d2ea048-9225-11ef-b2a8-2a914695a946_wm-removebg-preview.png'),
       description: 'Marte, conocido como el "planeta rojo" debido a su color característico, es el cuarto planeta del sistema solar y ha fascinado a la humanidad durante siglos. Su superficie presenta características únicas, incluidos los volcanes más grandes y los valles más profundos del sistema solar. A pesar de ser más pequeño que la Tierra, Marte tiene estaciones similares gracias a su inclinación axial. La atmósfera de Marte es delgada y compuesta principalmente de dióxido de carbono, lo que dificulta la existencia de agua líquida en la superficie. Sin embargo, se han encontrado signos de agua en forma de hielo y en antiguos ríos y lagos. Marte es un lugar clave para la exploración espacial, ya que se considera un candidato potencial para la colonización humana en el futuro.',
       distanceFromSun: '227.9 million km',
       diameter: '6,779 km',
@@ -63,7 +63,7 @@ const planetData = [
     {
       id: '5',
       title: 'Júpiter',
-      image: '',
+      image: require('../img/005p_a55e5e82-918e-11ef-b2c1-829606c855ef_wm-transformed.png'),
       description: 'Júpiter es el gigante del sistema solar y el planeta más grande que conocemos, con un diámetro de aproximadamente 139,822 km. Es un gigante gaseoso compuesto principalmente de hidrógeno y helio, con una atmósfera turbulenta que presenta características como bandas de nubes y tormentas, siendo la más famosa la Gran Manch Roja, una gigantesca tormenta que ha estado activa durante siglos. Júpiter tiene al menos 79 lunas conocidas, entre las cuales destacan las cuatro lunas galileanas: Ío, Europa, Ganimedes y Calisto. Cada una de estas lunas tiene características únicas que las hacen interesantes para la investigación. La intensa gravedad de Júpiter también influye en otros cuerpos en el sistema solar, actuando como un escudo protector al desviar cometas y asteroides.',
       distanceFromSun: '778.5 million km',
       diameter: '139,822 km',
@@ -78,7 +78,7 @@ const planetData = [
     {
       id: '6',
       title: 'Saturno',
-      image: '',
+      image: require('../img/006p_8eb7e948-9227-11ef-8f34-9afd28bf6444_wm-transformed.png'),
       description: 'Saturno es famoso por sus impresionantes anillos, que están compuestos de hielo y partículas de roca. Es el segundo planeta más grande del sistema solar y también es un gigante gaseoso, principalmente formado por hidrógeno y helio. Saturno tiene una rotación rápida, completando un giro sobre su eje en aproximadamente 10.7 horas. Su atmósfera es menos densa que la de Júpiter, pero también muestra bandas de nubes y tormentas. Saturno tiene más de 80 lunas, y Titán, su luna más grande, es particularmente notable, ya que posee una atmósfera densa y océanos de metano líquido. Este planeta ha sido un objeto de estudio fascinante para los científicos, y misiones como Cassini han proporcionado información valiosa sobre su sistema.',
       distanceFromSun: '1.434 billion km',
       diameter: '116,464 km',
@@ -108,7 +108,7 @@ const planetData = [
     {
       id: '8',
       title: 'Neptuno',
-      image: '',
+      image: require('../img/008p_77973336-922c-11ef-8dd8-6e8bfdc1f9a6_wm007.png'),
       description: 'Neptuno, el planeta más lejano del Sol, es otro gigante de gas que presenta un color azul intenso. Su atmósfera está compuesta principalmente de hidrógeno, helio y metano, lo que le da su color característico. Neptuno tiene vientos extremadamente rápidos que alcanzan hasta 2,100 km/h, lo que lo convierte en uno de los planetas más ventosos del sistema solar. Su campo magnético es inusual y está inclinado respecto a su eje de rotación. Neptuno tiene al menos 14 lunas, siendo Tritón la más grande y notable, ya que presenta actividad geológica. La exploración de Neptuno ha sido limitada, pero sigue siendo un área de interés para futuras misiones espaciales.',
       distanceFromSun: '4.495 billion km',
       diameter: '49,244 km',
