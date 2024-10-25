@@ -5,6 +5,7 @@ import { View, Text, StyleSheet, SafeAreaView, ScrollView,
 
 // components
 import MapItem from '../../components/MapItem';
+import SolarSystem from '../../components/SolarSystem';
 
 //styles
 import { MapStyles } from '../../styles/styles';
@@ -29,11 +30,12 @@ const MapScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-    <FlatList
+      <SolarSystem/>
+    {/* <FlatList
       data={DATA}
       renderItem={({item}) => <MapItem title={item.title} description={item.description} id={item.id} />}
       keyExtractor={item => item.id}
-    />
+    /> */}
   </SafeAreaView>
   )
 }
