@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Alert, TouchableWithoutFeedback } from 'react-native';
 import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming, Easing } from 'react-native-reanimated';
 
 const Mercury = () => {
@@ -19,16 +19,24 @@ const Mercury = () => {
     };
   });
 
-  // Repetimos la rotación indefinidamente
+  // Animación continua para la rotación sin "saltos"
   useEffect(() => {
     angle.value = withRepeat(
-      withTiming(Math.PI * 2, { duration: 4000, easing: Easing.linear }),  // Un giro completo en 4 segundos
-      -1  // Repetición infinita
+      withTiming(angle.value + Math.PI * 2, { duration: 4000, easing: Easing.linear }),
+      -1,
+      false  // Sin revertir la animación, aumentando el ángulo continuamente
     );
   }, []);
 
+  // Función que se activa al hacer clic en Mercurio
+  const handleMercuryPress = () => {
+    Alert.alert("¡Mercurio!", "Has tocado Mercurio.");
+  };
+
   return (
-    <Animated.View style={[styles.mercury, mercuryStyle]} />
+    <TouchableWithoutFeedback onPress={handleMercuryPress}>
+      <Animated.View style={[styles.mercury, mercuryStyle]} />
+    </TouchableWithoutFeedback>
   );
 };
 
