@@ -69,6 +69,10 @@ const MapStackNavigator = () => {
         component={MapScreen}
         options={{ headerShown: false }}/>
       <Stack.Screen
+        name='TestScreen'
+        component={TestScreen}
+        options={{ headerShown: false }}/>
+      <Stack.Screen
         name='PlanetScreen'
         component={PlanetScreen}
         options={{ headerShown: false }}/>

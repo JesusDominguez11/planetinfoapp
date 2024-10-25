@@ -8,13 +8,17 @@ import SolarSystem from '../../components/SolarSystem';
 
 //styles
 
+import { useNavigation } from '@react-navigation/native';
+import TestScreen from './TestScreen';
+
 
 const MapScreen = () => {
   // styles = MapStyles
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
-      <SolarSystem/>
+      <SolarSystem navigation={navigation}/>
   </SafeAreaView>
   )
 }

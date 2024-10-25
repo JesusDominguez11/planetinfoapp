@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { StyleSheet, Alert, TouchableWithoutFeedback } from 'react-native';
 import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming, Easing } from 'react-native-reanimated';
 
-const Planet = ({ name, radius, size, color, rotationSpeed }) => {
+const Planet = ({ id, name, radius, size, color, rotationSpeed, navigation }) => {
     const angle = useSharedValue(0);
 
     // Animación de rotación alrededor del Sol
@@ -29,7 +29,8 @@ const Planet = ({ name, radius, size, color, rotationSpeed }) => {
 
   // Función que se activa al hacer clic en el planeta
   const handlePlanetPress = () => {
-    Alert.alert(name, `Has tocado el planeta ${name}.`);
+    // Alert.alert(name, `Has tocado el planeta ${name} (ID: ${id}). `);
+    navigation.navigate("PlanetScreen", { planetId : id });
   };
 
   return (

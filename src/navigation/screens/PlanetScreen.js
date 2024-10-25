@@ -6,9 +6,21 @@ import { View, Text, StyleSheet, FlatList, SafeAreaView, Image } from 'react-nat
 import planetData from '../../data/planetData';
 
 const PlanetScreen = ({ route }) => {
-    const { planetId } = route.params;
+    const { planetId } = route.params;    
     const planet = planetData.find(p => p.id === planetId);
+
+    console.log('Planeta:' + planet);
+
     // const { title, description } = route.params;
+
+        // Manejar el caso en que no se encuentra el planeta
+        if (!planet) {
+          return (
+              <View style={styles.container}>
+                  <Text>No se encontró el planeta.</Text>
+              </View>
+          );
+      }
 
     const renderItem = ({ item }) => (
         <View style={styles.item}>
