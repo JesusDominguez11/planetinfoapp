@@ -8,7 +8,7 @@ import Planet from './Planet';
 const { width } = Dimensions.get('window'); // Obtener el ancho de la pantalla
 
 const SolarSystem = () => {
-  const factorAceleration = 30;
+  const factorAceleration = 60;
 
 // Jupiter (69.911 km de radio) – 1.120% el tamaño de la Tierra.
 // Saturno (58.232 km de radio) – 945% el tamaño de la Tierra.
@@ -37,7 +37,7 @@ const SolarSystem = () => {
         radius={width * 0.260} 
         size={28} 
         color="#d1a760" 
-        rotationSpeed={(4333 * factorAceleration) / 20} 
+        rotationSpeed={(4333 * factorAceleration) / 10} 
         hasRings={true} 
       />
       <Planet 
@@ -45,7 +45,7 @@ const SolarSystem = () => {
         radius={width * 0.335} 
         size={28} 
         color="#f4c542" 
-        rotationSpeed={(10759 * factorAceleration) / 20} 
+        rotationSpeed={(10759 * factorAceleration) / 10} 
         hasRings={true} 
       />
       <Planet 
@@ -53,7 +53,7 @@ const SolarSystem = () => {
         radius={width * 0.400} 
         size={20} 
         color="#5f9cf5" 
-        rotationSpeed={(30687 * factorAceleration) / 20} 
+        rotationSpeed={(30687 * factorAceleration) / 10} 
         hasRings={true} 
       />
       <Planet 
@@ -61,28 +61,28 @@ const SolarSystem = () => {
         radius={width * 0.450} 
         size={20} 
         color="#4b7fff" 
-        rotationSpeed={(60190 * factorAceleration) / 20} 
+        rotationSpeed={(60190 * factorAceleration) / 10} 
       />
       <Planet 
         name="Plutón" 
         radius={width * 0.490} 
         size={8} 
         color="#c0c0c0" 
-        rotationSpeed={(90520 * factorAceleration) / 100} 
+        rotationSpeed={(90560 * factorAceleration) / 100} 
       />
       <Planet 
         name="Eris" 
         radius={width * 0.520} 
         size={8} 
         color="#a8a8a8" 
-        rotationSpeed={55800 * factorAceleration / 100} 
+        rotationSpeed={203100 * factorAceleration / 100} 
       />
       <Planet 
         name="Sedna" 
         radius={width * 0.540} 
         size={8} 
         color="#b0b0b0" 
-        rotationSpeed={117500 * factorAceleration / 100} 
+        rotationSpeed={4559000 * factorAceleration / 100} 
       />
     </View>
   );
