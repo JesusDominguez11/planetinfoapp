@@ -1,9 +1,12 @@
 // PlanetDetail.js
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, SafeAreaView, Image } from 'react-native';
-
+import { View, Text, StyleSheet, FlatList, SafeAreaView, ImageBackground, Image } from 'react-native';
+//components
+import Background from '../../components/Background';
 //data
 import planetData from '../../data/planetData';
+//styles
+import { BackgroundStyles } from '../../styles/styles';
 
 const PlanetScreen = ({ route }) => {
     const { planetId } = route.params;    
@@ -45,7 +48,7 @@ const PlanetScreen = ({ route }) => {
     const [ image, setImage ] = useState('../../img/001p.png')
 
       return (
-        <View style={styles.container}>
+        <Background>
           <Text style={styles.title}>{planet.title}</Text>
           <Image style={styles.imgPlanet} source={planet.image} ></Image>
           <FlatList
@@ -53,7 +56,7 @@ const PlanetScreen = ({ route }) => {
             renderItem={renderItem}
             keyExtractor={(item) => item.title}
           ></FlatList>
-        </View>
+        </Background>
       );
     };
 
@@ -89,8 +92,8 @@ const PlanetScreen = ({ route }) => {
             color: '#ffffff', // Texto blanco para ítems
         },
         imgPlanet: {
-            width: 400,
-            height: 400,
+            width: 250,
+            height: 250,
             resizeMode: 'contain',
             alignSelf: 'center',
         },

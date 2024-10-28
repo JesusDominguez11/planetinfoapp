@@ -9,6 +9,15 @@ export const GlobalStyles = StyleSheet.create({
     },
   });
 
+export const BackgroundStyles = StyleSheet.create({
+  background: {
+    flex: 1,
+    // resizeMode: 'cover', // Ajusta la imagen para cubrir toda la pantalla
+    justifyContent: 'center',
+
+  },
+});
+
 export const MapStyles = StyleSheet.create({
   container: {
     flex: 1,

@@ -1,22 +1,21 @@
 import { View, Text, StyleSheet, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
-
+//components
+import Background from '../../components/Background';
 //styles
+import { BackgroundStyles } from '../../styles/styles';
 
 const SigninScreen = () => {
 
   return (
-    <ImageBackground 
-    source={require('../../img/bg/bg_9098131.png')}  // Asegúrate de tener la imagen en la ruta especificada
-    style={styles.background}
-  >
+    <Background>
     <SafeAreaView 
     style={styles.container}
     >
       <Text>SigninScreen</Text>
     </SafeAreaView>
-    </ImageBackground>
+    </Background>
   )
 }
 

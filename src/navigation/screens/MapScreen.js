@@ -3,13 +3,15 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView,
   StatusBar, FlatList, 
   ImageBackground} from 'react-native';
-
+//navigation
+import { useNavigation } from '@react-navigation/native';
 // components
 import SolarSystem from '../../components/SolarSystem';
-
+import Background from '../../components/Background';
 //styles
+import { BackgroundStyles } from '../../styles/styles';
 
-import { useNavigation } from '@react-navigation/native';
+
 import TestScreen from './TestScreen';
 
 
@@ -18,24 +20,15 @@ const MapScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <ImageBackground 
-      source={require('../../img/bg/bg_9098131.png')}  // Asegúrate de tener la imagen en la ruta especificada
-      style={styles.background}
-    >
+    <Background>
     <SafeAreaView style={styles.container}>
       <SolarSystem navigation={navigation}/>
   </SafeAreaView>
-  </ImageBackground>
+  </Background>
   )
 }
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    // resizeMode: 'cover', // Ajusta la imagen para cubrir toda la pantalla
-    justifyContent: 'center',
-
-  },
   container: {
     flex: 1,
     padding: 20,

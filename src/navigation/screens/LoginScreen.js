@@ -1,26 +1,21 @@
 import React from 'react'
 import { View, Text, TextInput, Button, StyleSheet, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-
+//components
+import Background from '../../components/Background';
 // Navigation
 import { useNavigation } from '@react-navigation/native'
-
 //reanimated
 import Animated from 'react-native-reanimated';
-
 //styles
-import { GlobalStyles } from '../../styles/styles';
+import { BackgroundStyles } from '../../styles/styles';
 
 const LoginScreen = () => {
 
-  // styles = GlobalStyles
   const navigation = useNavigation();  
 
   return (    
-    <ImageBackground 
-    source={require('../../img/bg/bg_9098131.png')}  // Asegúrate de tener la imagen en la ruta especificada
-    style={styles.background}
-  >
+    <Background>
     <SafeAreaView
       style={styles.container}>
 
@@ -42,17 +37,11 @@ const LoginScreen = () => {
               }} />
 
     </SafeAreaView>
-    </ImageBackground>
+    </Background>
   )
 }
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    // resizeMode: 'cover', // Ajusta la imagen para cubrir toda la pantalla
-    justifyContent: 'center',
-
-  },
   container: {
       flex: 1,
       // backgroundColor: '#121212', // Fondo oscuro
