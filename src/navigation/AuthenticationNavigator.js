@@ -12,12 +12,24 @@ import SigninScreen from "./screens/SigninScreen";
 //navigators
 import AppNavigator from "./AppNavigator";
 
+import { useTheme } from '../context/ThemeContext';
+import { getThemeStyles } from '../styles/themeStyles';
+
 const Stack = createStackNavigator();
 
 const AuthenticationStackNavigator = () => {
+  const { isDarkMode } = useTheme();
+  const styles = getThemeStyles(isDarkMode);
+
   return (
     <Stack.Navigator
-    initialRouteName='AuthenticationScreen'>
+    initialRouteName='AuthenticationScreen'
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: isDarkMode ? '#121212' : '#f2f2f2',
+      },
+      headerTintColor: isDarkMode ? '#FFFFFF' : '#333333',
+    }}>
       <Stack.Screen
         name='AuthenticationBottomTabNavigator'
         component={AuthenticationBottomTabNavigator}
@@ -33,20 +45,23 @@ const AuthenticationStackNavigator = () => {
 const Tab = createBottomTabNavigator();
 
 function AuthenticationBottomTabNavigator() {
+  const { isDarkMode } = useTheme();
+  const styles = getThemeStyles(isDarkMode);
+
   return (
     <Tab.Navigator
     screenOptions={{
       tabBarStyle: {
-          backgroundColor: '#000000', // Color de fondo negro
+         backgroundColor: styles.tabBarBackgroundColor,
           borderTopWidth: 0, // Quita el borde superior
       },
-      tabBarActiveTintColor: '#FFFFFF', // Color del texto y iconos activos
-      tabBarInactiveTintColor: '#FFFFFF', // Color del texto y iconos inactivos
+      tabBarActiveTintColor: styles.tabBarActiveTintColor,
+      tabBarInactiveTintColor: styles.tabBarInactiveTintColor,
       tabBarLabelStyle: {
           fontSize: 14, // Tamaño de fuente de las etiquetas
       },
       tabBarIconStyle: {
-          shadowColor: '#fff', // Color de sombra blanca
+        shadowColor: styles.tabBarIconShadowColor,
           shadowOffset: { width: 0, height: 2 },
           shadowOpacity: 0.3,
           shadowRadius: 4,

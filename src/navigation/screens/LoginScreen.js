@@ -3,81 +3,61 @@ import { View, Text, TextInput, Button, StyleSheet, ImageBackground } from 'reac
 import { SafeAreaView } from 'react-native-safe-area-context';
 //components
 import Background from '../../components/Background';
+import ThemedButton from '../../components/Themed/ThemedButton';
+import ThemedTextInput from '../../components/Themed/ThemedTextInput';
 // Navigation
 import { useNavigation } from '@react-navigation/native'
 //reanimated
 import Animated from 'react-native-reanimated';
+//context
+import { useTheme } from '../../context/ThemeContext';
 //styles
-import { BackgroundStyles } from '../../styles/styles';
+import { getThemeStyles } from '../../styles/themeStyles';
 
 const LoginScreen = () => {
-
+  const { isDarkMode, toggleTheme } = useTheme();
+  const styles = getThemeStyles(isDarkMode); 
   const navigation = useNavigation();  
 
   return (    
     <Background>
     <SafeAreaView
-      style={styles.container}>
-
+      style={styles.background}>
+        
       <Text style={styles.title}>Iniciar sesion</Text>
 
-      <Text style={styles.title}>Usuario:</Text>
-      <TextInput style={styles.title}
+      {/* <Text style={styles.title}>Usuario:</Text> */}
+      {/* <TextInput style={styles.title}
           placeholder="Usuario"
-        />
+        /> */}
+                      <ThemedTextInput
+        placeholder="Usuario..."
+      />
 
-      <Text style={styles.title}>Contraseña:</Text>
-      <TextInput style={styles.title}       
+
+      {/* <Text style={styles.title}>Contraseña:</Text> */}
+      {/* <TextInput style={styles.title}       
           placeholder="Contraseña"
-        />
+        /> */}
+              <ThemedTextInput
+        placeholder="Contraseña..."
+      />
+        
 
-      <Button style={styles.title} title="Iniciar sesión"/>
-      <Button style={styles.title} title="Entrar como invitado" onPress={() => {
+      {/* <Button style={styles.title} title="Iniciar sesión"/> */}
+      <ThemedButton title="Iniciar Sesion" onPress={() => { /* Cambia el tema aquí */ }} />
+      {/* <Button style={styles.title} title="Entrar como invitado" onPress={() => {
+               navigation.navigate('HomeScreen')
+              }} /> */}
+      <ThemedButton title="Entrar como invitado" onPress={() => {
                navigation.navigate('HomeScreen')
               }} />
+
+
 
     </SafeAreaView>
     </Background>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      // backgroundColor: '#121212', // Fondo oscuro
-      padding: 20,
-  },
-  title: {
-      fontSize: 24,
-      color: '#ffffff', // Texto blanco
-      fontWeight: 'bold',
-      marginBottom: 20,
-  },
-  item: {
-      backgroundColor: '#1e1e1e', // Fondo de los ítems
-      padding: 15,
-      borderRadius: 10,
-      marginVertical: 5,
-      // Sombras
-      shadowColor: '#000', // Color de la sombra
-      shadowOffset: {
-          width: 0,
-          height: 2,
-      },
-      shadowOpacity: 0.25, // Opacidad de la sombra
-      shadowRadius: 3.5, // Radio de la sombra
-      elevation: 5, // Elevación para Android
-  },
-  itemTitle: {
-      fontSize: 16,
-      color: '#ffffff', // Texto blanco para ítems
-  },
-  imgPlanet: {
-      width: 400,
-      height: 400,
-      resizeMode: 'contain',
-      alignSelf: 'center',
-  },
-});
 
 export default LoginScreen

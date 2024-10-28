@@ -8,12 +8,6 @@ import { useNavigation } from '@react-navigation/native';
 // components
 import SolarSystem from '../../components/SolarSystem';
 import Background from '../../components/Background';
-//styles
-import { BackgroundStyles } from '../../styles/styles';
-
-
-import TestScreen from './TestScreen';
-
 
 const MapScreen = () => {
   // styles = MapStyles

@@ -5,6 +5,7 @@ import React from 'react'
 import MapScreen from './screens/MapScreen';
 import PlanetScreen from './screens/PlanetScreen';
 import TestScreen from './screens/TestScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 // navigation
 import 'react-native-gesture-handler';
@@ -19,6 +20,7 @@ function AppDrawerNavigator() {
   return (
     <Drawer.Navigator>
       <Drawer.Screen name="Home" component={AppTabNavigator} options={{ headerShown: false }} />
+      <Drawer.Screen name="Ajustes" component={SettingsScreen} options={{ headerShown: false }} />
     </Drawer.Navigator>
   );
 }
@@ -51,8 +53,8 @@ function AppTabNavigator() {
         {/* <MapStackNavigator></MapStackNavigator> */}
       </Tab.Screen>
       <Tab.Screen name="Home II" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} />
-      <Tab.Screen name="Home III" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} />
-      <Tab.Screen name="Home IV" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} />
+      {/* <Tab.Screen name="Home III" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} /> */}
+      {/* <Tab.Screen name="H-ome IV" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} /> */}
     </Tab.Navigator>
   );
 }

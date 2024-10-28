@@ -4,7 +4,6 @@ import React from 'react'
 //components
 import Background from '../../components/Background';
 //styles
-import { BackgroundStyles } from '../../styles/styles';
 
 const SigninScreen = () => {
 

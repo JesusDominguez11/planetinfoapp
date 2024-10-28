@@ -5,16 +5,10 @@ import { View, Text, StyleSheet, FlatList, SafeAreaView, ImageBackground, Image 
 import Background from '../../components/Background';
 //data
 import planetData from '../../data/planetData';
-//styles
-import { BackgroundStyles } from '../../styles/styles';
 
 const PlanetScreen = ({ route }) => {
     const { planetId } = route.params;    
     const planet = planetData.find(p => p.id === planetId);
-
-    console.log('Planeta:' + planet);
-
-    // const { title, description } = route.params;
 
         // Manejar el caso en que no se encuentra el planeta
         if (!planet) {
