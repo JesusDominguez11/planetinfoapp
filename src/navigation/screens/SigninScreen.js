@@ -1,66 +1,48 @@
-import { View, Text, StyleSheet, ImageBackground } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import React from 'react'
-//components
+import React from 'react';
+import { View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTheme } from '@react-navigation/native';
+// Componentes personalizados
 import Background from '../../components/Background';
-//styles
+import ThemedTextInput from '../../components/Themed/ThemedTextInput';
+import ThemedButton from '../../components/Themed/ThemedButton';
 
 const SigninScreen = () => {
-
+  const { colors, dark } = useTheme();
+  
   return (
     <Background>
-    <SafeAreaView 
-    style={styles.container}
-    >
-      <Text>SigninScreen</Text>
-    </SafeAreaView>
+      <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
+        <Text style={[styles.title, { color: colors.text }]}>Crear una Cuenta</Text>
+        
+        <ThemedTextInput placeholder="Nombre de usuario" />
+        <ThemedTextInput placeholder="Correo electrónico" keyboardType="email-address" />
+        <ThemedTextInput placeholder="Contraseña" secureTextEntry />
+        
+        <ThemedButton title="Registrarse" onPress={() => alert('Registro exitoso')} />
+        
+        <Text style={[styles.footerText, { color: colors.text }]}>¿Ya tienes una cuenta? Inicia sesión</Text>
+      </SafeAreaView>
     </Background>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    // resizeMode: 'cover', // Ajusta la imagen para cubrir toda la pantalla
-    justifyContent: 'center',
-
-  },
   container: {
-      flex: 1,
-      // backgroundColor: '#121212', // Fondo oscuro
-      padding: 20,
+    flex: 1,
+    padding: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   title: {
-      fontSize: 24,
-      color: '#ffffff', // Texto blanco
-      fontWeight: 'bold',
-      marginBottom: 20,
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
   },
-  item: {
-      backgroundColor: '#1e1e1e', // Fondo de los ítems
-      padding: 15,
-      borderRadius: 10,
-      marginVertical: 5,
-      // Sombras
-      shadowColor: '#000', // Color de la sombra
-      shadowOffset: {
-          width: 0,
-          height: 2,
-      },
-      shadowOpacity: 0.25, // Opacidad de la sombra
-      shadowRadius: 3.5, // Radio de la sombra
-      elevation: 5, // Elevación para Android
-  },
-  itemTitle: {
-      fontSize: 16,
-      color: '#ffffff', // Texto blanco para ítems
-  },
-  imgPlanet: {
-      width: 400,
-      height: 400,
-      resizeMode: 'contain',
-      alignSelf: 'center',
+  footerText: {
+    marginTop: 20,
+    fontSize: 14,
   },
 });
 
-export default SigninScreen
+export default SigninScreen;
