@@ -3,11 +3,14 @@ import { StyleSheet } from 'react-native';
 
 const commonStyles = {
   colors:{
+    activeTintColor: '#FF0000', // Color del texto activo
+    inactiveTintColor: '#FFFFFF', // Color del texto inactivo ////////////////////////
   },
   background: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    drawerBackground: '#FFFFFF', // Fondo del drawer en modo claro
   },
   container: {
     flex: 1,
@@ -58,10 +61,14 @@ const lightTheme = {
   colors:{
     ...commonStyles.colors,
     color: '#C7C7C7',
+    activeTintColor: '#C7C7C7', // Color del texto activo
+    inactiveTintColor: '#1D1D1D', // Color del texto inactivo ////////////////////////
+    activeBackgroundColor: '#1D1D1D', // Color de fondo del elemento activo
   },
   background: {
     ...commonStyles.background,
     backgroundColor: 'rgba(124, 124, 124, 0)',
+    drawerBackground: '#C7C7C7', // Fondo blanco para el drawer claro
   },
   title: {
     ...commonStyles.title,
@@ -107,10 +114,14 @@ const darkTheme = {
   colors:{
     ...commonStyles.colors,
     color: '#1D1D1D',
+    activeTintColor: '#121212', // Color del texto activo
+    inactiveTintColor: '#C7C7C7', // Color del texto inactivo ////////////////////////
+    activeBackgroundColor: '#C7C7C7', // Color de fondo del elemento activo
   },
   background: {
     ...commonStyles.background,
     backgroundColor: 'rgba(0, 0, 0, 0.0)',
+    drawerBackground: '#121212', // Fondo oscuro para el drawer
   },
   title: {
     ...commonStyles.title,

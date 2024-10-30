@@ -25,9 +25,29 @@ function AppDrawerNavigator() {
   const styles = getThemeStyles(isDarkMode);
 
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={AppTabNavigator} options={{ headerShown: false }} />
-      <Drawer.Screen name="Ajustes" component={SettingsScreen} options={{ headerShown: false }} />
+    <Drawer.Navigator          
+      screenOptions={{
+        drawerStyle: {
+          backgroundColor: styles.background.drawerBackground,
+          width: 200, // Ancho del drawer
+        },
+        headerShown: false,
+        drawerActiveTintColor: styles.colors.activeTintColor, // Color del texto activo
+        drawerInactiveTintColor: styles.colors.inactiveTintColor, // Color del texto inactivo
+        drawerItemStyle: {
+          // Estilo para los elementos del drawer
+          borderRadius: 5, // Bordes redondeados si lo deseas
+        },
+        drawerItemLabelStyle: {
+          // Estilo para la etiqueta del elemento
+          color: styles.colors.inactiveTintColor, // Color del texto por defecto
+        },
+        // Puedes usar un color específico para el fondo del elemento activo
+        drawerActiveBackgroundColor: styles.colors.activeBackgroundColor, // Color de fondo del elemento activo
+      }}
+    >
+      <Drawer.Screen name="Inicio" component={AppTabNavigator} />
+      <Drawer.Screen name="Ajustes" component={SettingsScreen}  />
     </Drawer.Navigator>
   );
 }
