@@ -8,27 +8,34 @@ import { useNavigation } from '@react-navigation/native';
 // components
 import SolarSystem from '../../components/SolarSystem';
 import Background from '../../components/Background';
+//context
+import { useTheme } from '../../context/ThemeContext';
+//styles
+import { getThemeStyles } from '../../styles/themeStyles';
 
 const MapScreen = () => {
-  // styles = MapStyles
+  
+  const { isDarkMode, toggleTheme } = useTheme();
+  const styles = getThemeStyles(isDarkMode); 
+  
   const navigation = useNavigation();
 
   return (
-    <Background>
-    <SafeAreaView style={styles.container}>
+    <Background style={[styles.background]}>
+    <SafeAreaView style={[styles.container, {backgroundColor: styles.background.backgroundColor}]}>
       <SolarSystem navigation={navigation}/>
   </SafeAreaView>
   </Background>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: 'rgba(0,0,0,0.5)', // Filtro oscuro (opcional)
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     padding: 20,
+//     backgroundColor: 'rgba(0,0,0,0.5)', // Filtro oscuro (opcional)
+//   },
+// });
 
 export default MapScreen
 

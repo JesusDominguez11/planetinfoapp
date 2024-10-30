@@ -6,8 +6,8 @@ import { useTheme } from '../../context/ThemeContext'; // O la fuente de tu tema
 import { getThemeStyles } from '../../styles/themeStyles';
 
 const ThemedButton = ({ onPress, title }) => {
-  const { isDarkMode } = useTheme();
-  const styles = getThemeStyles(isDarkMode);
+  const { isDarkMode, forceDarkMode } = useTheme();
+  const styles = getThemeStyles(forceDarkMode || isDarkMode);
 
   // Valores para animación
   const scale = useSharedValue(1);

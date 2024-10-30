@@ -11,7 +11,7 @@ const SettingsScreen = () => {
   const styles = getThemeStyles(isDarkMode); 
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: styles.colors.color}]}>
       <Text style={styles.title}>Ajustes</Text>
       <View>
         <Text style={styles.normalText}>{isDarkMode ? 'Modo Oscuro' : 'Modo Claro'}</Text>

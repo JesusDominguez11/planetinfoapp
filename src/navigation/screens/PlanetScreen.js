@@ -5,8 +5,16 @@ import { View, Text, StyleSheet, FlatList, SafeAreaView, ImageBackground, Image 
 import Background from '../../components/Background';
 //data
 import planetData from '../../data/planetData';
+//context
+import { useTheme } from '../../context/ThemeContext';
+//styles
+import { getThemeStyles } from '../../styles/themeStyles';
 
 const PlanetScreen = ({ route }) => {
+
+  const { isDarkMode, toggleTheme } = useTheme();
+  const styles2 = getThemeStyles(isDarkMode); 
+
     const { planetId } = route.params;    
     const planet = planetData.find(p => p.id === planetId);
 
@@ -42,7 +50,7 @@ const PlanetScreen = ({ route }) => {
     const [ image, setImage ] = useState('../../img/001p.png')
 
       return (
-        <Background>
+        <Background style={styles2.background.backgroundColor}>
           <Text style={styles.title}>{planet.title}</Text>
           <Image style={styles.imgPlanet} source={planet.image} ></Image>
           <FlatList

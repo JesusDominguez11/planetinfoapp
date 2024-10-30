@@ -6,8 +6,8 @@ import { useTheme } from '../../context/ThemeContext';
 import { getThemeStyles } from '../../styles/themeStyles';
 
 const ThemedTextInput = ({ placeholder, value, onChangeText }) => {
-  const { isDarkMode } = useTheme();
-  const styles = getThemeStyles(isDarkMode);
+  const { isDarkMode, forceDarkMode } = useTheme();
+  const styles = getThemeStyles(forceDarkMode || isDarkMode);
 
   // Animación de enfoque
   const scale = useSharedValue(1);

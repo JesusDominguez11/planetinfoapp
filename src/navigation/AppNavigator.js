@@ -14,9 +14,16 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HeaderTitle } from '@react-navigation/elements';
 
+import { useTheme } from '../context/ThemeContext';
+import { getThemeStyles } from '../styles/themeStyles';
+
 const Drawer = createDrawerNavigator();
 
 function AppDrawerNavigator() {
+
+  const { isDarkMode } = useTheme();
+  const styles = getThemeStyles(isDarkMode);
+
   return (
     <Drawer.Navigator>
       <Drawer.Screen name="Home" component={AppTabNavigator} options={{ headerShown: false }} />
@@ -28,20 +35,28 @@ function AppDrawerNavigator() {
 const Tab = createBottomTabNavigator();
 
 function AppTabNavigator() {
+
+  const { isDarkMode } = useTheme();
+  const styles = getThemeStyles(isDarkMode);
+
   return (
     <Tab.Navigator
     screenOptions={{
       tabBarStyle: {
-          backgroundColor: '#000000', // Color de fondo negro
+        backgroundColor: styles.tabBarBackgroundColor,
+          // backgroundColor: '#000000', // Color de fondo negro
           borderTopWidth: 0, // Quita el borde superior
       },
-      tabBarActiveTintColor: '#FFFFFF', // Color del texto y iconos activos
-      tabBarInactiveTintColor: '#FFFFFF', // Color del texto y iconos inactivos
+      tabBarActiveTintColor: styles.tabBarActiveTintColor,
+      tabBarInactiveTintColor: styles.tabBarInactiveTintColor,
+      // tabBarActiveTintColor: '#FFFFFF', // Color del texto y iconos activos
+      // tabBarInactiveTintColor: '#FFFFFF', // Color del texto y iconos inactivos
       tabBarLabelStyle: {
           fontSize: 14, // Tamaño de fuente de las etiquetas
       },
       tabBarIconStyle: {
-          shadowColor: '#fff', // Color de sombra blanca
+        shadowColor: styles.tabBarIconShadowColor,
+          // shadowColor: '#fff', // Color de sombra blanca
           shadowOffset: { width: 0, height: 2 },
           shadowOpacity: 0.3,
           shadowRadius: 4,
@@ -52,7 +67,7 @@ function AppTabNavigator() {
       <Tab.Screen name="Map Screen" component={MapStackNavigator} options={{ headerShown: false, tabBarShowLabel:false }}> 
         {/* <MapStackNavigator></MapStackNavigator> */}
       </Tab.Screen>
-      <Tab.Screen name="Home II" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} />
+      <Tab.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false, tabBarShowLabel:false }} />
       {/* <Tab.Screen name="Home III" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} /> */}
       {/* <Tab.Screen name="H-ome IV" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} /> */}
     </Tab.Navigator>

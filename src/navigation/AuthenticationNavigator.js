@@ -1,5 +1,4 @@
-//styles
-
+import { useEffect } from 'react';
 
 //navigation
 import { createStackNavigator } from '@react-navigation/stack';
@@ -45,8 +44,18 @@ const AuthenticationStackNavigator = () => {
 const Tab = createBottomTabNavigator();
 
 function AuthenticationBottomTabNavigator() {
-  const { isDarkMode } = useTheme();
-  const styles = getThemeStyles(isDarkMode);
+  // const { isDarkMode } = useTheme();
+  // const styles = getThemeStyles(isDarkMode);
+
+  const { forceDarkMode, setForceDark } = useTheme();
+  const styles = getThemeStyles(forceDarkMode); // Usamos el estado de forzado
+
+  useEffect(() => {
+    setForceDark(true); // Forzar el modo oscuro al cargar
+    return () => {
+      setForceDark(false); // Restaurar el modo original al salir
+    };
+  }, []);
 
   return (
     <Tab.Navigator
@@ -70,8 +79,8 @@ function AuthenticationBottomTabNavigator() {
       },
   }}
     >
-      <Tab.Screen name="LogIn" component={LoginScreen} options={{ headerShown: false }} />
-      <Tab.Screen name="SignIn" component={SigninScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Iniciar sesión" component={LoginScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Registrarse" component={SigninScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
 }

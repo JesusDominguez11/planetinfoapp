@@ -2,6 +2,8 @@
 import { StyleSheet } from 'react-native';
 
 const commonStyles = {
+  colors:{
+  },
   background: {
     flex: 1,
     justifyContent: 'center',
@@ -9,14 +11,20 @@ const commonStyles = {
   },
   container: {
     flex: 1,
+    padding: 20,
     justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
     fontSize: 24,
+    fontWeight: 'bold',
+    marginTop: 20,
+    marginBottom: 20,
   },
   normalText: {
-    fontSize: 12,
+    fontSize: 14,
+    marginTop: 20,
+    marginBottom: 20,
   },
   button: {
     paddingVertical: 12,
@@ -47,17 +55,21 @@ const commonStyles = {
 
 const lightTheme = {
   ...commonStyles,
-  container: {
-    ...commonStyles.container,
-    backgroundColor: '#F0F0F0',
+  colors:{
+    ...commonStyles.colors,
+    color: '#C7C7C7',
+  },
+  background: {
+    ...commonStyles.background,
+    backgroundColor: 'rgba(124, 124, 124, 0)',
   },
   title: {
     ...commonStyles.title,
-    color: '#c2c0c0',
+    color: '#333232',
   },
   normalText: {
     ...commonStyles.normalText,
-    color: '#333',
+    color: '#333232',
   },
   button: {
     ...commonStyles.button,
@@ -82,7 +94,7 @@ const lightTheme = {
   },
 
     // Estilos específicos para la navegación en modo claro
-    tabBarBackgroundColor: '#f2f2f2',
+    tabBarBackgroundColor: '#B6B6B6',
     tabBarActiveTintColor: '#333333',
     tabBarInactiveTintColor: '#888888',
     tabBarIconShadowColor: '#333',
@@ -92,9 +104,13 @@ const lightTheme = {
 
 const darkTheme = {
   ...commonStyles,
-  container: {
-    ...commonStyles.container,
-    backgroundColor: '#1C1C1C',
+  colors:{
+    ...commonStyles.colors,
+    color: '#1D1D1D',
+  },
+  background: {
+    ...commonStyles.background,
+    backgroundColor: 'rgba(0, 0, 0, 0.0)',
   },
   title: {
     ...commonStyles.title,
@@ -127,7 +143,7 @@ const darkTheme = {
   },
 
     // Estilos específicos para la navegación en modo oscuro
-    tabBarBackgroundColor: '#121212',
+    tabBarBackgroundColor: '#161616',
     tabBarActiveTintColor: '#FFFFFF',
     tabBarInactiveTintColor: '#888888',
     tabBarIconShadowColor: '#FFFFFF',
