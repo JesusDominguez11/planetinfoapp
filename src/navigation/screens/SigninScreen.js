@@ -35,7 +35,7 @@ const SigninScreen = () => {
         
         <ThemedButton title="Registrarse" onPress={() => alert('Registro exitoso')} />
         
-        <Text style={[styles.footerText]}>¿Ya tienes una cuenta? Inicia sesión</Text>
+        <Text style={[styles.normalText]}>¿Ya tienes una cuenta? Inicia sesión</Text>
       </SafeAreaView>
     </Background>
   );

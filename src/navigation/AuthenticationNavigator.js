@@ -68,6 +68,8 @@ function AuthenticationBottomTabNavigator() {
       tabBarInactiveTintColor: styles.tabBarInactiveTintColor,
       tabBarLabelStyle: {
           fontSize: 14, // Tamaño de fuente de las etiquetas
+          paddingVertical: 16, // Ajusta el espacio vertical para centrar el texto
+          textAlign: 'center', // Asegura que el texto esté centrado
       },
       tabBarIconStyle: {
         shadowColor: styles.tabBarIconShadowColor,
