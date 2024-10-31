@@ -6,6 +6,8 @@ import { useTheme } from '../../context/ThemeContext';
 //styles
 import { getThemeStyles } from '../../styles/themeStyles';
 
+import MusicPlayer from '../../components/MusicPlayer';
+
 const SettingsScreen = () => {
   const { isDarkMode, toggleTheme } = useTheme();
   const styles = getThemeStyles(isDarkMode); 
@@ -21,6 +23,7 @@ const SettingsScreen = () => {
           thumbColor={isDarkMode ? '#fff' : '#121212'}
           trackColor={{ false: '#767577', true: '#81b0ff' }}
         />
+        <MusicPlayer/>
       </View>
     </View>
   );
