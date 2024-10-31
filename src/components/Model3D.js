@@ -15,11 +15,11 @@ const RotatingCube = () => {
 
   return (
     <mesh ref={meshRef}>
-      <boxGeometry args={[2, 2, 2]} /> {/* Tamaño del cubo */}
-      <meshStandardMaterial 
-        color="#3498db" 
-        metalness={1} 
-        roughness={0.4} 
+      <boxGeometry args={[3, 3, 3]} /> {/* Tamaño del cubo */}
+      <meshStandardMaterial
+        color="#3498db"
+        metalness={1}
+        roughness={0.4}
       />
       {/* Material con metalness y roughness para reflejar la luz */}
     </mesh>
@@ -28,25 +28,15 @@ const RotatingCube = () => {
 
 const Model3D = () => {
   return (
-    <View style={styles.canvasContainer}>
-      <Canvas>
-        <ambientLight intensity={1.0} /> {/* Luz ambiental */}
-        <directionalLight position={[0, 0, 5]} intensity={1} color="white" />
-        <directionalLight position={[-5, 5, 0]} intensity={0.5} color="yellow" />
-        <RotatingCube /> {/* Aquí se usa el componente del cubo rotativo */}
-      </Canvas>
-    </View>
+      <View style={[ { width:'80%', height:'30%', alignSelf:'center' }]}>
+        <Canvas>
+          <ambientLight intensity={1.0} /> {/* Luz ambiental */}
+          <directionalLight position={[0, 0, 5]} intensity={1} color="white" />
+          <directionalLight position={[-5, 5, 0]} intensity={0.5} color="yellow" />
+          <RotatingCube /> {/* Aquí se usa el componente del cubo rotativo */}
+        </Canvas>
+      </View>
   );
 };
-
-const styles = StyleSheet.create({
-  canvasContainer: {
-    width: 250,
-    height: 250,
-    position: 'absolute',
-    top: 120,
-    alignSelf: 'center',
-  },
-});
 
 export default Model3D;

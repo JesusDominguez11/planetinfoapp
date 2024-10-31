@@ -10,19 +10,20 @@ import { useTheme } from '../../context/ThemeContext';
 import { getThemeStyles } from '../../styles/themeStyles';
 import Model3D from '../../components/Model3D';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { withTiming } from 'react-native-reanimated';
 
 const PlanetScreen = ({ route }) => {
 
   const { isDarkMode, toggleTheme } = useTheme();
-  const styles2 = getThemeStyles(isDarkMode); 
+  const styles2 = getThemeStyles(isDarkMode);
 
-  const { planetId } = route.params;    
+  const { planetId } = route.params;
   const planet = planetData.find(p => p.id === planetId);
 
   // Manejar el caso en que no se encuentra el planeta
   if (!planet) {
     return (
-      <View style={styles.container}>
+      <View >
         <Text>No se encontró el planeta.</Text>
       </View>
     );
@@ -34,9 +35,9 @@ const PlanetScreen = ({ route }) => {
     </View>
   );
 
-  const data = [ 
+  const data = [
     { title: 'Descripción', value: planet.description },
-    { title: 'Distancia del Sol', value: planet.distanceFromSun },        
+    { title: 'Distancia del Sol', value: planet.distanceFromSun },
     { title: 'Diámetro', value: planet.diameter },
     { title: 'Masa', value: planet.mass },
     { title: 'Período Orbital', value: planet.orbitalPeriod },
@@ -48,23 +49,40 @@ const PlanetScreen = ({ route }) => {
   ];
 
   return (
-    <Background style={styles2.background.backgroundColor}>
-      <SafeAreaView style={styles2.container}>
-      <Text style={styles.title}>{planet.title}</Text>
+    <Background>
+      <SafeAreaView >
+        <Text style={styles2.title}>{planet.title}</Text>
 
-      <View style={styles.imgPlanet}>
-        <Model3D style={{marginBottom: 20}} />
-      </View>      
+          <Model3D />
 
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.title}
-      />
+        <FlatList style={[ { width:'90%', height:'70%', alignSelf:'center'}]}
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.title}
+        />
       </SafeAreaView>
     </Background>
   );
 };
+
+//   return (
+//     <Background style={styles2.background.backgroundColor}>
+//       <SafeAreaView style={styles2.container}>
+//       <Text style={styles.title}>{planet.title}</Text>
+
+//       <View style={styles.imgPlanet}>
+//         <Model3D style={{marginBottom: 20}} />
+//       </View>      
+
+//       <FlatList
+//         data={data}
+//         renderItem={renderItem}
+//         keyExtractor={(item) => item.title}
+//       />
+//       </SafeAreaView>
+//     </Background>
+//   );
+// };
 
 const styles = StyleSheet.create({
   container: {

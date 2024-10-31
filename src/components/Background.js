@@ -8,9 +8,7 @@ const Background = ({ children }) => {
     return (
 <ImageBackground
       source={require('../img/bg/bg_9098131.png')}  
-      style={BackgroundStyles.background}
-    >
-       <View style={BackgroundStyles.overlay} />
+      style={BackgroundStyles.background} >
       {children}
     </ImageBackground>
     );
