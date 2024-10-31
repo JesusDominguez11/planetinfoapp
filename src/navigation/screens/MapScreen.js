@@ -12,6 +12,7 @@ import Background from '../../components/Background';
 import { useTheme } from '../../context/ThemeContext';
 //styles
 import { getThemeStyles } from '../../styles/themeStyles';
+import MusicPlayer from '../../components/MusicPlayer';
 
 const MapScreen = () => {
   
@@ -25,17 +26,10 @@ const MapScreen = () => {
     <SafeAreaView style={[styles.container, {backgroundColor: styles.background.backgroundColor}]}>
       <SolarSystem navigation={navigation}/>
   </SafeAreaView>
+  <MusicPlayer/>
   </Background>
   )
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     padding: 20,
-//     backgroundColor: 'rgba(0,0,0,0.5)', // Filtro oscuro (opcional)
-//   },
-// });
 
 export default MapScreen
 

@@ -8,7 +8,7 @@ import { getThemeStyles } from '../../styles/themeStyles';
 const ThemedButton = ({ onPress, title }) => {
   const { isDarkMode, forceDarkMode } = useTheme();
   const styles = getThemeStyles(forceDarkMode || isDarkMode);
-  console.log(isDarkMode, forceDarkMode);
+  // console.log(isDarkMode, forceDarkMode);
   // Valores para animación
   const scale = useSharedValue(1);
   const opacity = useSharedValue(1);

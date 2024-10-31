@@ -16,6 +16,7 @@ import { HeaderTitle } from '@react-navigation/elements';
 
 import { useTheme } from '../context/ThemeContext';
 import { getThemeStyles } from '../styles/themeStyles';
+import MusicPlayer from '../components/MusicPlayer';
 
 const Drawer = createDrawerNavigator();
 
@@ -119,6 +120,8 @@ const MapStackNavigator = () => {
 
 export default function AppNavigator() {
   return (
-    <AppDrawerNavigator/>
+    <AppDrawerNavigator>
+          <MusicPlayer/>
+    </AppDrawerNavigator>
   );
 }

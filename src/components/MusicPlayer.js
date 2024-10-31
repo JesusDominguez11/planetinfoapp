@@ -17,15 +17,14 @@ export default function App() {
  // Reproduce automáticamente al montar el componente
  useEffect(() => {
   async function playSound() {
+    
     console.log('Loading Sound');
-    const { sound } = await Audio.Sound.createAsync(require('../../sounstrack/dream.mp3'));
+    const { sound } = await Audio.Sound.createAsync(require('../../sounstrack/home_serenity.mp3'));
     setSound(sound);
 
     console.log('Playing Sound');
     await sound.playAsync(); // Reproduce automáticamente
   }
-
-  playSound();
 
   playSound();
 
