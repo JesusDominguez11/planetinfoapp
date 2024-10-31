@@ -11,31 +11,32 @@ import { getThemeStyles } from '../styles/themeStyles';
 export default function App() {
   const { isDarkMode, toggleTheme } = useTheme();
   const styles = getThemeStyles(isDarkMode); 
-  
+
   const [sound, setSound] = useState();
 
+ // Reproduce automáticamente al montar el componente
+ useEffect(() => {
   async function playSound() {
     console.log('Loading Sound');
-    const { sound } = await Audio.Sound.createAsync( require('../../sounstrack/dream.mp3')
-    );
+    const { sound } = await Audio.Sound.createAsync(require('../../sounstrack/dream.mp3'));
     setSound(sound);
 
     console.log('Playing Sound');
-    await sound.playAsync();
+    await sound.playAsync(); // Reproduce automáticamente
   }
 
-  useEffect(() => {
-    return sound
-      ? () => {
-          console.log('Unloading Sound');
-          sound.unloadAsync();
-        }
-      : undefined;
-  }, [sound]);
+  playSound();
 
-  return (
-    <View>
-      <ThemedButton title="Play Sound" onPress={playSound} />
-    </View>
-  );
+  playSound();
+
+  // Liberar el sonido cuando el componente se desmonte
+  return () => {
+    if (sound) {
+      console.log('Unloading Sound');
+      sound.unloadAsync();
+    }
+  };
+}, []);
+
+return null; // No hay necesidad de mostrar un botón ni nada visual
 }
