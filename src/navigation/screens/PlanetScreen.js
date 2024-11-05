@@ -11,6 +11,7 @@ import { getThemeStyles } from '../../styles/themeStyles';
 import Model3D from '../../components/Model3D';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { withTiming } from 'react-native-reanimated';
+import PlanetModel from '../../components/PlanetModel';
 
 const PlanetScreen = ({ route }) => {
 
@@ -53,7 +54,8 @@ const PlanetScreen = ({ route }) => {
       <SafeAreaView >
         <Text style={styles2.title}>{planet.title}</Text>
 
-          <Model3D />
+          {/* <Model3D /> */}
+          <PlanetModel />
 
         <FlatList style={[ { width:'90%', height:'70%', alignSelf:'center'}]}
           data={data}
