@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 //screens
 import MapScreen from './screens/MapScreen';
@@ -18,6 +18,13 @@ import { useTheme } from '../context/ThemeContext';
 import { getThemeStyles } from '../styles/themeStyles';
 // import MusicPlayer from '../components/MusicPlayer';
 import { MusicPlayerProvider } from '../context/MusicPlayerContext';
+
+// import { Animated } from 'react-native-reanimated';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import GalaxyIcon from '../components/GalaxyIcon';
+import SettingsIcon from '../components/SettingsIcon';
+
+import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming } from 'react-native-reanimated';
 
 const Drawer = createDrawerNavigator();
 
@@ -57,44 +64,34 @@ function AppDrawerNavigator() {
 const Tab = createBottomTabNavigator();
 
 function AppTabNavigator() {
-
   const { isDarkMode } = useTheme();
   const styles = getThemeStyles(isDarkMode);
 
   return (
     <Tab.Navigator
-    screenOptions={{
-      tabBarStyle: {
-        backgroundColor: styles.tabBarBackgroundColor,
-          // backgroundColor: '#000000', // Color de fondo negro
-          borderTopWidth: 0, // Quita el borde superior
-      },
-      tabBarActiveTintColor: styles.tabBarActiveTintColor,
-      tabBarInactiveTintColor: styles.tabBarInactiveTintColor,
-      // tabBarActiveTintColor: '#FFFFFF', // Color del texto y iconos activos
-      // tabBarInactiveTintColor: '#FFFFFF', // Color del texto y iconos inactivos
-      tabBarLabelStyle: {
-          fontSize: 14, // Tamaño de fuente de las etiquetas
-      },
-      tabBarIconStyle: {
-        shadowColor: styles.tabBarIconShadowColor,
-          // shadowColor: '#fff', // Color de sombra blanca
-          shadowOffset: { width: 0, height: 2 },
-          shadowOpacity: 0.3,
-          shadowRadius: 4,
-          elevation: 5, // Elevación para Android
-      },
-  }}
+      screenOptions={({ route }) => ({
+        tabBarStyle: {
+          backgroundColor: styles.tabBarBackgroundColor,
+          borderTopWidth: 0,
+        },
+        tabBarActiveTintColor: styles.tabBarActiveTintColor,
+        tabBarInactiveTintColor: styles.tabBarInactiveTintColor,
+        tabBarShowLabel: false,
+        tabBarIcon: ({ focused }) => {
+          if (route.name === 'Map Screen') {
+            return <GalaxyIcon focused={focused} />; // Icono de galaxia animado
+          } else if (route.name === 'Settings') {
+            return <SettingsIcon focused={focused} />;
+          }
+        },
+      })}
     >
-      <Tab.Screen name="Map Screen" component={MapStackNavigator} options={{ headerShown: false, tabBarShowLabel:false }}> 
-        {/* <MapStackNavigator></MapStackNavigator> */}
-      </Tab.Screen>
-      <Tab.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false, tabBarShowLabel:false }} />
-      {/* <Tab.Screen name="Home III" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} /> */}
-      {/* <Tab.Screen name="H-ome IV" component={TestScreen} options={{ headerShown: false, tabBarShowLabel:false }} /> */}
+      <Tab.Screen name="Map Screen" component={MapStackNavigator} options={{ headerShown: false }} />
+      <Tab.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
 }
+
 
 const Stack = createStackNavigator();
 

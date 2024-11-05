@@ -9,7 +9,7 @@ function Model(props) {
     const mesh = useRef();
 
     useFrame((state, delta) => (
-        mesh.current.rotation.y += delta
+        mesh.current.rotation.y += delta / 2
     ));
 
     const gltf = useGLTF(modelPath)
