@@ -1,23 +1,34 @@
 import React, { useEffect } from 'react';
 import { View } from 'react-native';
-import Animated, { withSpring, useSharedValue, useAnimatedStyle, withRepeat, withTiming } from 'react-native-reanimated';
+import Animated, { withSpring, useSharedValue, useAnimatedStyle, withRepeat, withTiming, interpolateColor } from 'react-native-reanimated';
 
 import Svg, { Path, Circle } from 'react-native-svg';
 
 const GalaxyIcon = ({ focused }) => {
   const rotation = useSharedValue(0);
+  const scale = useSharedValue(1);
+  const color = useSharedValue(0);
 
   useEffect(() => {
     if (focused) {
-      rotation.value = withRepeat(withTiming(360, { duration: 6000 }), -1, true);
+      rotation.value = withRepeat(withTiming(360, { duration: 6000 }), -1, false);
+      scale.value = withRepeat(withSpring(1.1, { damping: 2, stiffness: 100 }), -1, true);
+      color.value = withRepeat(withTiming(1, { duration: 1000 }), -1, true);
     } else {
       rotation.value = withTiming(0, { duration: 500 });
+      scale.value = withTiming(1, { duration: 300 });
+      color.value = withTiming(0, { duration: 500 });
     }
   }, [focused]);
 
   const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ rotate: `${rotation.value}deg` }],
+    transform: [
+      { rotate: `${rotation.value}deg` },
+      { scale: scale.value },
+    ],
   }));
+
+  const spiralColor = interpolateColor(color.value, [0, 1], ['#800080', '#FF00FF']); // Cambiar el color de las espirales
 
   return (
     <Animated.View style={[{ width: 50, height: 50 }, animatedStyle]}>
@@ -25,13 +36,13 @@ const GalaxyIcon = ({ focused }) => {
         {/* Background spiral arms */}
         <Path
           d="M25 5 C15 10, 10 20, 20 30 S35 40, 45 25"
-          stroke="#800080"
+          stroke={spiralColor}
           strokeWidth="2"
           fill="none"
         />
         <Path
           d="M25 5 C35 10, 40 20, 30 30 S15 40, 5 25"
-          stroke="#4B0082"
+          stroke={spiralColor}
           strokeWidth="2"
           fill="none"
         />
