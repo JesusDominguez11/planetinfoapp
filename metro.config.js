@@ -7,7 +7,7 @@ module.exports = (() => {
 
   config.resolver = {
     ...resolver,
-    assetExts: [...resolver.assetExts, "blend", "obj", "glb", "gltf", "png", "jpg"],
+    assetExts: [...resolver.assetExts, "bin", "blend", "obj", "glb", "gltf", "png", "jpg"],
     sourceExts: [
       ...resolver.sourceExts,
       "js",
