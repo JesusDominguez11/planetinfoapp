@@ -11,7 +11,7 @@ export const MusicPlayerProvider = ({ children }) => {
     const loadSound = async () => {
       if (!sound) {
         const { sound: newSound } = await Audio.Sound.createAsync(
-          require('../../soundtracks/Infinite_Horizons_FiftySounds.mp3')
+          require('../../soundtracks/dream.mp3')
         );
         setSound(newSound);
         await newSound.setIsLoopingAsync(true);

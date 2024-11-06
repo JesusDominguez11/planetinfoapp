@@ -56,14 +56,13 @@ export default function PlanetModel({ modelPath, scale }) {
                 </View>
             )}
             <Canvas>
-                <ambientLight intensity={0.1} />
-                <directionalLight position={[20, 10, 5]} intensity={4} />
+                <ambientLight intensity={0.05} />
+                <directionalLight position={[20, 10, 5]} intensity={3} />
                 <Suspense fallback={null}>
                     <Model
                         modelPath={modelPath}
                         scale={scale}
                         position={[0, 0, 0]}
-                        rotation={[0.3333, 0, 0.3333]}
                         onLoaded={handleModelLoaded}
                     />
                 </Suspense>

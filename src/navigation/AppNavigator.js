@@ -38,7 +38,7 @@ function AppDrawerNavigator() {
       screenOptions={{
         drawerStyle: {
           backgroundColor: styles.background.drawerBackground,
-          width: 200, // Ancho del drawer
+          width: 200, // Ancho del drawer,
         },
         headerShown: false,
         drawerActiveTintColor: styles.colors.activeTintColor, // Color del texto activo

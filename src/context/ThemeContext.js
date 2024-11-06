@@ -7,7 +7,7 @@ const ThemeContext = createContext();
 
 // Proveedor de tema que envolverá la app
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [forceDarkMode, setForceDarkMode] = useState(false); // Nuevo estado
 
   // Función para alternar entre modos

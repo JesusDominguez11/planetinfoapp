@@ -21,7 +21,8 @@ const commonStyles = {
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 20,
+    // marginTop: 20,
+    padding: 20,
     marginBottom: 20,
   },
   normalText: {
