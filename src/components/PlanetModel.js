@@ -1,16 +1,22 @@
+// import { Suspense, useRef, useState } from 'react';
+// import { Canvas, useFrame } from '@react-three/fiber/native';
+// import { useGLTF, useProgress } from '@react-three/drei/native';
+// import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+
+
 import { Suspense, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber/native';
-import { useGLTF, useProgress } from '@react-three/drei/native';
+import { useGLTF, OrbitControls, useProgress } from '@react-three/drei/native';
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 
 function Model({ modelPath, scale, onLoaded, ...props }) {
     const mesh = useRef();
     const { scene } = useGLTF(modelPath, true);
 
-    // Rotación continua en el eje Y
+    // Rotación continua del planeta en el eje Y
     useFrame((state, delta) => {
         if (mesh.current) {
-            mesh.current.rotation.y += delta / 10;
+            mesh.current.rotation.y += delta / 10; // Ajusta la velocidad de rotación según sea necesario
         }
     });
 
@@ -56,8 +62,17 @@ export default function PlanetModel({ modelPath, scale }) {
                 </View>
             )}
             <Canvas>
-                <ambientLight intensity={0.05} />
+                <ambientLight intensity={0.5} />
                 <directionalLight position={[20, 10, 5]} intensity={3} />
+
+                {/* Agregamos los controles de cámara con límite de zoom */}
+                <OrbitControls
+                    enableZoom={true}
+                    enableRotate={true}
+                    minDistance={3}  // Límite mínimo de distancia (acercarse)
+                    maxDistance={10} // Límite máximo de distancia (alejarse)
+                />
+
                 <Suspense fallback={null}>
                     <Model
                         modelPath={modelPath}

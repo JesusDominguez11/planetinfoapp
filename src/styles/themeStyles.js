@@ -23,7 +23,7 @@ const commonStyles = {
     fontWeight: 'bold',
     // marginTop: 20,
     padding: 20,
-    marginBottom: 20,
+    // marginBottom: 20,
   },
   normalText: {
     fontSize: 14,

@@ -57,7 +57,7 @@ const PlanetScreen = ({ route }) => {
            {/* Pasa la ruta del modelo y la escala al componente PlanetModel */}
           <PlanetModel modelPath={planet.modelPath} scale={planet.scale} />
 
-        <FlatList style={[ { width:'90%', height:'70%', alignSelf:'center'}]}
+        <FlatList style={[ { margin:0, width:'90%', height:'60%', alignSelf:'center'}]}
           data={data}
           renderItem={renderItem}
           keyExtractor={(item) => item.title}
