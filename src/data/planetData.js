@@ -3,6 +3,8 @@ const planetData = [
     {
       id: 1,
       title: 'Mercurio',
+      modelPath: require('../models/mercury.glb'),
+      scale: 0.165,
       image: require('../img/001p_03f150b8-9184-11ef-ae2a-4651a841d960_wm-transformed.png'),
       description: ' Mercurio es el planeta más cercano al Sol y el más pequeño del sistema solar. Su proximidad al Sol y su falta de atmósfera significativa lo convierten en un mundo de extremos térmicos, donde las temperaturas pueden alcanzar hasta 430 °C durante el día y caer a -180 °C por la noche. La superficie de Mercurio está marcada por cráteres, similar a la Luna, y es un lugar de gran interés para la investigación científica. La duración de su día es mayor que su año, ya que tarda 59 días terrestres en rotar sobre su eje, mientras que completa una órbita alrededor del Sol en solo 88 días. Este planeta también presenta un campo magnético, lo que es sorprendente para un cuerpo tan pequeño.',
       distanceFromSun: '57.91 million km',
@@ -18,6 +20,8 @@ const planetData = [
     {
       id: 2,
       title: 'Venus',
+      modelPath: require('../models/venus.glb'),
+      scale: 0.165,
       image: '',
       description: 'Venus, conocido como el "gemelo de la Tierra" por su similitud en tamaño y composición, es un planeta fascinante y extremo. A pesar de ser similar en estructura a la Tierra, sus condiciones son hostiles. Venus tiene una atmósfera muy densa compuesta principalmente de dióxido de carbono, lo que genera un efecto invernadero extremo que eleva las temperaturas hasta 462 °C, más que en Mercurio, a pesar de estar más lejos del Sol. Su rotación es peculiar, ya que gira en sentido contrario al de otros planetas, lo que significa que en Venus el Sol sale por el oeste y se pone por el este. Las nubes de ácido sulfúrico en su atmósfera añaden un nivel adicional de interés para los científicos que estudian su clima.',
       distanceFromSun: '108.2 million km',
@@ -108,6 +112,8 @@ const planetData = [
     {
       id: 8,
       title: 'Neptuno',
+      modelPath: require('../models/neptune.glb'),
+      scale: 0.22,
       image: require('../img/008p_77973336-922c-11ef-8dd8-6e8bfdc1f9a6_wm007.png'),
       description: 'Neptuno, el planeta más lejano del Sol, es otro gigante de gas que presenta un color azul intenso. Su atmósfera está compuesta principalmente de hidrógeno, helio y metano, lo que le da su color característico. Neptuno tiene vientos extremadamente rápidos que alcanzan hasta 2,100 km/h, lo que lo convierte en uno de los planetas más ventosos del sistema solar. Su campo magnético es inusual y está inclinado respecto a su eje de rotación. Neptuno tiene al menos 14 lunas, siendo Tritón la más grande y notable, ya que presenta actividad geológica. La exploración de Neptuno ha sido limitada, pero sigue siendo un área de interés para futuras misiones espaciales.',
       distanceFromSun: '4.495 billion km',

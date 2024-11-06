@@ -54,8 +54,8 @@ const PlanetScreen = ({ route }) => {
       <SafeAreaView >
         <Text style={styles2.title}>{planet.title}</Text>
 
-          {/* <Model3D /> */}
-          <PlanetModel />
+           {/* Pasa la ruta del modelo y la escala al componente PlanetModel */}
+          <PlanetModel modelPath={planet.modelPath} scale={planet.scale} />
 
         <FlatList style={[ { width:'90%', height:'70%', alignSelf:'center'}]}
           data={data}
