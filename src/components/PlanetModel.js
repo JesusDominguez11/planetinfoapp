@@ -64,6 +64,7 @@ export default function PlanetModel({ modelPath, scale }) {
             <Canvas>
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[20, 10, 5]} intensity={3} />
+                <pointLight position={[20, 10, 5]} intensity={10} />
 
                 {/* Agregamos los controles de cámara con límite de zoom */}
                 <OrbitControls
