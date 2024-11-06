@@ -37,6 +37,8 @@ const planetData = [
     {
       id: 3,
       title: 'Tierra',
+      modelPath: require('../models/earth(2).glb'),
+      scale: 2.22,
       image: require('../img/003p_d481479a-9217-11ef-863a-829606c855ef_wm.png'),
       description: 'La Tierra es el único planeta conocido que alberga vida, y su superficie es aproximadamente 71% agua. Esta combinación de agua, aire y tierra ha creado un ambiente diverso y dinámico. La atmósfera terrestre está compuesta principalmente de oxígeno y nitrógeno, lo que es esencial para la vida tal como la conocemos. La Tierra tiene un período orbital de 365.25 días, lo que define un año, y una rotación que dura aproximadamente 24 horas, creando el ciclo de día y noche. Además, su campo magnético protege a la vida de las radiaciones cósmicas y solares. La variedad de climas, paisajes y ecosistemas en la Tierra la convierte en un lugar único en el sistema solar.',
       distanceFromSun: '149.6 million km',
@@ -52,6 +54,8 @@ const planetData = [
     {
       id: 4,
       title: 'Marte',
+      modelPath: require('../models/mars.glb'),
+      scale: 0.165,
       image: require('../img/004p_6d2ea048-9225-11ef-b2a8-2a914695a946_wm-removebg-preview.png'),
       description: 'Marte, conocido como el "planeta rojo" debido a su color característico, es el cuarto planeta del sistema solar y ha fascinado a la humanidad durante siglos. Su superficie presenta características únicas, incluidos los volcanes más grandes y los valles más profundos del sistema solar. A pesar de ser más pequeño que la Tierra, Marte tiene estaciones similares gracias a su inclinación axial. La atmósfera de Marte es delgada y compuesta principalmente de dióxido de carbono, lo que dificulta la existencia de agua líquida en la superficie. Sin embargo, se han encontrado signos de agua en forma de hielo y en antiguos ríos y lagos. Marte es un lugar clave para la exploración espacial, ya que se considera un candidato potencial para la colonización humana en el futuro.',
       distanceFromSun: '227.9 million km',
@@ -67,6 +71,8 @@ const planetData = [
     {
       id: 5,
       title: 'Júpiter',
+      modelPath: require('../models/jupiter.glb'),
+      scale: 0.0165,
       image: require('../img/005p_a55e5e82-918e-11ef-b2c1-829606c855ef_wm-transformed.png'),
       description: 'Júpiter es el gigante del sistema solar y el planeta más grande que conocemos, con un diámetro de aproximadamente 139,822 km. Es un gigante gaseoso compuesto principalmente de hidrógeno y helio, con una atmósfera turbulenta que presenta características como bandas de nubes y tormentas, siendo la más famosa la Gran Manch Roja, una gigantesca tormenta que ha estado activa durante siglos. Júpiter tiene al menos 79 lunas conocidas, entre las cuales destacan las cuatro lunas galileanas: Ío, Europa, Ganimedes y Calisto. Cada una de estas lunas tiene características únicas que las hacen interesantes para la investigación. La intensa gravedad de Júpiter también influye en otros cuerpos en el sistema solar, actuando como un escudo protector al desviar cometas y asteroides.',
       distanceFromSun: '778.5 million km',
@@ -82,6 +88,8 @@ const planetData = [
     {
       id: 6,
       title: 'Saturno',
+      modelPath: require('../models/saturn.glb'),
+      scale: 0.165,
       image: require('../img/006p_8eb7e948-9227-11ef-8f34-9afd28bf6444_wm-transformed.png'),
       description: 'Saturno es famoso por sus impresionantes anillos, que están compuestos de hielo y partículas de roca. Es el segundo planeta más grande del sistema solar y también es un gigante gaseoso, principalmente formado por hidrógeno y helio. Saturno tiene una rotación rápida, completando un giro sobre su eje en aproximadamente 10.7 horas. Su atmósfera es menos densa que la de Júpiter, pero también muestra bandas de nubes y tormentas. Saturno tiene más de 80 lunas, y Titán, su luna más grande, es particularmente notable, ya que posee una atmósfera densa y océanos de metano líquido. Este planeta ha sido un objeto de estudio fascinante para los científicos, y misiones como Cassini han proporcionado información valiosa sobre su sistema.',
       distanceFromSun: '1.434 billion km',
@@ -97,6 +105,8 @@ const planetData = [
     {
       id: 7,
       title: 'Urano',
+      modelPath: require('../models/uranus.glb'),
+      scale: 0.0035,
       image: '',
       description: 'Urano es un gigante de gas que se destaca por su color azul debido a la presencia de metano en su atmósfera. Es único en su inclinación axial extrema, lo que significa que gira casi de lado, causando estaciones muy diferentes en comparación con otros planetas. Su atmósfera está compuesta principalmente de hidrógeno, helio y metano. Urano tiene un sistema de anillos delgados y al menos 27 lunas conocidas, algunas de las cuales tienen características geológicas interesantes. La distancia de Urano del Sol y su ambiente frío hacen que su temperatura superficial promedio sea de -197 °C, lo que lo convierte en uno de los planetas más fríos del sistema solar. A pesar de su distancia, Urano es un objeto de estudio clave en la astrofísica moderna.',
       distanceFromSun: '2.871 billion km',
@@ -129,6 +139,8 @@ const planetData = [
     {
       id: 9,
       title: 'Plutón',
+      modelPath: require('../models/pluto.glb'),
+      scale: 2.2,
       image: '',
       description: 'Plutón fue considerado el noveno planeta del sistema solar hasta que en 2006 fue reclasificado como un planeta enano por la Unión Astronómica Internacional. Su órbita es altamente elíptica y se extiende más allá de Neptuno. Plutón tiene una atmósfera delgada que consiste principalmente de nitrógeno, metano y monóxido de carbono. Su superficie está cubierta de hielo y roca, y presenta características geológicas complejas, incluidos glaciares de nitrógeno. Plutón también posee cinco lunas conocidas, siendo Caronte la más grande, lo que genera un interesante sistema binario. Su estudio ha desafiado nuestra comprensión de la definición de los planetas y ha llevado a debates sobre la clasificación de otros cuerpos celestes en el sistema solar.',
       distanceFromSun: '5.906 billion km',
